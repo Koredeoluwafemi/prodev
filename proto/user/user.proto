@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "pdmicro/proto/user";
+
+service UserService {
+  rpc GetUserDetails(GetUserRequest) returns (GetUserResponse);
+}
+
+message GetUserRequest {
+  string user_id = 1;
+}
+
+message GetUserResponse {
+  string name = 1;
+  string email = 2;
+}

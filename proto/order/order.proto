@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package order;
+
+option go_package = "pdmicro/proto/order";
+
+service OrderService {
+  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
+}
+
+message CreateOrderRequest {
+  string order_id = 1;
+  string user_id = 2;
+}
+
+message CreateOrderResponse {
+  string status = 1;
+  string user_name = 2;
+  string user_email = 3;
+}
